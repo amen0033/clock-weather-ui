@@ -1,0 +1,121 @@
+:root {
+  --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  --card: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.14);
+  --text: #f2f5f7;
+  --muted: rgba(242, 245, 247, 0.65);
+  --accent: #7dd3fc;
+}
+
+[data-theme="light"] {
+  --bg: linear-gradient(135deg, #dfe9f3, #ffffff);
+  --card: rgba(255, 255, 255, 0.75);
+  --card-border: rgba(15, 32, 39, 0.1);
+  --text: #0f2027;
+  --muted: rgba(15, 32, 39, 0.6);
+  --accent: #0284c7;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.2rem;
+  font-size: 1.4rem;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease;
+}
+.theme-toggle:hover { transform: scale(1.1); }
+
+.app {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.clock {
+  font-size: clamp(3rem, 14vw, 4.5rem);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+.date {
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.weather-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.weather-top h2 { font-size: 1.2rem; }
+
+select {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+select option { color: #0f2027; }
+
+.weather-icon { font-size: 3.2rem; }
+.weather-temp { font-size: 2.6rem; font-weight: 800; margin: 0.3rem 0; }
+.weather-desc { color: var(--muted); margin-bottom: 1.2rem; }
+
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid var(--card-border);
+  padding-top: 1rem;
+}
+.weather-details div { display: flex; flex-direction: column; gap: 0.25rem; }
+.weather-details span { color: var(--muted); font-size: 0.85rem; }
+
+.error { color: #f87171; font-size: 0.9rem; margin-top: 0.8rem; }
+
+.app-footer { text-align: center; color: var(--muted); font-size: 0.82rem; }
+.app-footer a { color: var(--accent); text-decoration: none; }
+.app-footer a:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .card { padding: 1.5rem; }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clock &amp; Weather</title>
+  <meta name="description" content="A clean live clock and weather app — HTML, CSS and JavaScript." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+
+  <main class="app">
+    <section class="card clock-card">
+      <div id="clock" class="clock">--:--:--</div>
+      <div id="date" class="date">Loading…</div>
+    </section>
+
+    <section class="card weather-card">
+      <div class="weather-top">
+        <h2>Weather</h2>
+        <select id="citySelect" aria-label="Choose a city"></select>
+      </div>
+      <div id="weatherBody" class="weather-body">
+        <div id="weatherIcon" class="weather-icon">⛅</div>
+        <div id="weatherTemp" class="weather-temp">--°C</div>
+        <div id="weatherDesc" class="weather-desc">Loading…</div>
+        <div class="weather-details">
+          <div><span>💧 Humidity</span><strong id="humidity">--%</strong></div>
+          <div><span>💨 Wind</span><strong id="wind">-- km/h</strong></div>
+        </div>
+      </div>
+      <p id="weatherError" class="error" hidden></p>
+    </section>
+
+    <footer class="app-footer">
+      <p>Built by <a href="https://github.com/amen0033" target="_blank" rel="noopener">Amen Chemengui</a> · Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
