@@ -22,3 +22,5 @@ Just open `index.html` in a browser — no build step needed (weather needs an i
 # or serve it locally
 python3 -m http.server 8000
 ```
+
+<!-- pages-rebuild -->
